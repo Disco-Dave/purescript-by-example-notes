@@ -42,7 +42,10 @@ data AddressQuery
     = ByName {firstName :: String, lastName :: String}
     | ByAddress {street :: String, city :: String, state :: String}
 
-findEntry :: String -> String -> AddressBook -> Maybe Entry
-findEntry firstName lastName =
-    let isEntry entry = firstName == entry.firstName && lastName == entry.lastName
-    in  filter isEntry >>> head
+findEntry :: AddressQuery -> AddressBook -> Maybe Entry
+findEntry query = head <<< filter (filterEntry query)
+    where 
+          filterEntry :: AddressQuery -> Entry -> Boolean
+          filterEntry (ByName name) entry = name.firstName == entry.firstName && name.firstName == entry.lastName
+          filterEntry (ByAddress query') entry = false
+
