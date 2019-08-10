@@ -18,14 +18,14 @@ showEntry entry =
     <> entry.firstName <> ": " 
     <> showAddress entry.address
 
-type Address =
+newtype Address = Address
     { street :: String
     , city :: String
     , state :: String
     }
 
 showAddress :: Address -> String
-showAddress address =
+showAddress (Address address) =
     address.street <> ", " 
     <> address.city <> ", " 
     <> address.state
@@ -37,6 +37,10 @@ emptyBook = empty
 
 insertEntry :: Entry -> AddressBook -> AddressBook
 insertEntry = (:)
+
+data AddressQuery
+    = ByName {firstName :: String, lastName :: String}
+    | ByAddress {street :: String, city :: String, state :: String}
 
 findEntry :: String -> String -> AddressBook -> Maybe Entry
 findEntry firstName lastName =
