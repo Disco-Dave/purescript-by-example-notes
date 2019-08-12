@@ -5,7 +5,16 @@ You can edit this file as you like.
 { name =
     "my-project"
 , dependencies =
-    [ "effect", "console", "psci-support" ]
+    [ "arrays"
+    , "console"
+    , "effect"
+    , "foldable-traversable"
+    , "integers"
+    , "math"
+    , "maybe"
+    , "psci-support"
+    , "strings"
+    ]
 , packages =
     ./packages.dhall
 , sources =
