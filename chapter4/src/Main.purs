@@ -3,8 +3,9 @@ module Main where
 import Prelude
 import Math ((%))
 import Data.Int (toNumber)
-import Data.Array(head, tail, filter, length, (..))
+import Data.Array(head, tail, filter, length, (..), cons)
 import Data.Maybe (fromMaybe)
+import Data.Foldable (foldl)
 import Effect (Effect)
 import Effect.Console (log)
 import Control.MonadZero (guard)
@@ -55,6 +56,20 @@ cartesianProduct arrayA arrayB = do
   a <- arrayA
   b <- arrayB
   pure $ Tuple a b
+
+calculateTriples :: Int -> Array (Array Int)
+calculateTriples n = do
+  a <- 1 .. (n - 2)
+  b <- (a + 1) .. (n - 1)
+  c <- (b + 1) .. n
+  guard $ a * a + b * b == c * c
+  pure [a,b,c]
+
+isAllTrue :: Array Boolean -> Boolean
+isAllTrue = foldl (&&) true
+
+reverse :: forall a. Array a -> Array a
+reverse = foldl (flip cons) []
 
 main :: Effect Unit
 main = do
