@@ -27,3 +27,14 @@ sameCity { address: { city: firstCity } } { address: { city: secondCity } } = fi
 fromSingleton :: forall a. a -> Array a -> a
 fromSingleton default [ a ] = a
 fromSingleton default _ = default
+
+data Point = Point
+  { x :: Number
+  , y :: Number
+  }
+
+data Shape
+  = Circle Point Number
+  | Rectangle Point Number Number
+  | Line Point Point
+  | Text Point String
