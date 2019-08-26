@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "rectangle": "spago bundle-app --main Example.Rectangle --watch > /dev/null | parcel index.html"
+    "rectangle": "spago bundle-app --main Example.Rectangle --watch > /dev/null | parcel index.html",
+    "shapes": "spago bundle-app --main Example.Shapes --watch > /dev/null | parcel index.html"
   },
   "keywords": [],
   "author": "",
