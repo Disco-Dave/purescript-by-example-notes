@@ -9,6 +9,8 @@ import Graphics.Canvas
   , moveTo
   , fillPath
   , setFillStyle
+  , setStrokeStyle
+  , strokePath
   , arc
   , rect
   , getContext2D
@@ -53,9 +55,11 @@ main = void $ unsafePartial do
     }
 
   _ <- setFillStyle ctx "#FF0000"
+  
+  setStrokeStyle ctx "green"
 
-  fillPath ctx $ do
+  strokePath ctx $ do
      _ <- moveTo ctx 300.0 260.0
      _ <- lineTo ctx 260.0 340.0
-     lineTo ctx 340.0 340.0
+     _ <- lineTo ctx 340.0 340.0
      closePath ctx
