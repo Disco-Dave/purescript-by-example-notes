@@ -4,7 +4,8 @@
   "description": "",
   "scripts": {
     "rectangle": "spago bundle-app --main Example.Rectangle --watch > /dev/null | parcel index.html",
-    "shapes": "spago bundle-app --main Example.Shapes --watch > /dev/null | parcel index.html"
+    "shapes": "spago bundle-app --main Example.Shapes --watch > /dev/null | parcel index.html",
+    "random": "spago bundle-app --main Example.Random --watch > /dev/null | parcel index.html"
   },
   "keywords": [],
   "author": "",
