@@ -16,6 +16,9 @@ You can edit this file as you like.
     , "psci-support"
     , "random"
     , "refs"
+    , "web-dom"
+    , "web-events"
+    , "web-html"
     ]
 , packages =
     ./packages.dhall

@@ -18,7 +18,7 @@ main = void $ unsafePartial do
   setFillStyle ctx "#FF0000"
   setStrokeStyle ctx "#000000"
 
-  for_ (1 .. 100) $ \_ -> do
+  for_ (1 .. 50) $ \_ -> do
     x <- random
     y <- random
     r <- random
